@@ -1,9 +1,10 @@
 package test
 
 import (
+	"testing"
+
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestTerraformAcr(t *testing.T) {
@@ -17,13 +18,13 @@ func TestTerraformAcr(t *testing.T) {
 	}
 
 	// Defer the destroy to cleanup all created resources
-	//defer terraform.Destroy(t, terraformOptions)
+	defer terraform.Destroy(t, terraformOptions)
 
 	// This will init and apply the resources and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
 
 	// Run `terraform output` to get the values of output variables
-	RG := terraform.Output(t, terraformOptions, "acr")
+	RG := terraform.Output(t, terraformOptions, "ACR_name")
 
 	// Assert statements
 	assert.Equal(t, RG, "ACR-RG-LAB22")
