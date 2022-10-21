@@ -1,11 +1,13 @@
 module "acr_subnet" {
-  source                                                = "git::ssh://coderepo.mdv.cpp.nonlive:29418/tf_module.terraform-azurerm-subnet?ref=master"
+  #source                                                = "git::ssh://coderepo.mdv.cpp.nonlive:29418/tf_module.terraform-azurerm-subnet?ref=master"
+  source                                                = "git::https://github.com/hmcts/cpp-module-terraform-azurerm-subnet.git?ref=main"
   subnet_name                                           = "SN-LAB-ACR-01"
   core_resource_group_name                              = "RG-LAB-INT-01"
   virtual_network_name                                  = "VN-LAB-INT-01"
   subnet_address_prefixes                               = ["10.1.12.0/28"]
   route_table_name                                      = "default"
   subnet_enforce_private_link_endpoint_network_policies = "true"
+
 }
 module "acr" {
   source                        = "../"
