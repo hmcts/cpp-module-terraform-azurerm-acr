@@ -23,3 +23,5 @@ module "acr" {
   public_network_access_enabled = "false"
   sku                           = "Premium"
 }
+
+  
