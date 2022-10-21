@@ -12,7 +12,7 @@ func TestTerraformAcr(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: "../example",
+		TerraformDir: "../../example",
 		//VarFiles:     []string{"terratest.tfvars"},
 		//Upgrade:      true,
 	}
