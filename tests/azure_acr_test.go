@@ -24,8 +24,8 @@ func TestTerraformAcr(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	// Run `terraform output` to get the values of output variables
-	RG := terraform.Output(t, terraformOptions, "ACR_name")
+	RG := terraform.Output(t, terraformOptions, "acr")
 
 	// Assert statements
-	assert.Equal(t, RG, "ACR-RG-LAB22")
+	assert.Equal(t, RG, "ACRTERRAREPO01")
 }
