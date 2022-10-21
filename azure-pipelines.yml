@@ -1,7 +1,7 @@
 name: CPP Azure ACR Module
 trigger: none
 pr:
-  - main
+  - dev/EI-886-Updated
 
 resources:
   repositories:
@@ -13,7 +13,7 @@ resources:
 extends:
   template: pipelines/terratest.yaml@cppAzureDevOpsTemplates
   parameters:
-    agentPool: "ubuntu-latest"
+    agentPool: "MDV-ADO-AGENTS-01"
     spnCredentialsVarGroup: "terratest-app-registration"
     azureServiceConnection: "ado_nonlive_service_principal_lab"
     terratestTimeout: "30"
