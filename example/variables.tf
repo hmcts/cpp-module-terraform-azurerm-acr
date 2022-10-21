@@ -4,6 +4,7 @@ variable "core_resource_group_name" {
   type        = string
   default     = ""
 }
+
 variable "acr_name" {
   description = "ACR name"
   type        = string

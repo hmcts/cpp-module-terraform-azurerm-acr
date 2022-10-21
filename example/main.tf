@@ -7,8 +7,8 @@ module "acr_subnet" {
   subnet_address_prefixes                               = ["10.1.12.0/28"]
   route_table_name                                      = "default"
   subnet_enforce_private_link_endpoint_network_policies = "true"
-
 }
+
 module "acr" {
   source                        = "../"
   acr_name                      = "ACRTERRAREPO01"
@@ -22,5 +22,4 @@ module "acr" {
   core_resource_group_name      = "RG-LAB-INT-01"
   public_network_access_enabled = "false"
   sku                           = "Premium"
-
 }
