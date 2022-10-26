@@ -1,7 +1,7 @@
 name: CPP Azure ACR Module
 trigger: none
 pr:
-  - dev/EI-886-Updated
+  - main
 
 resources:
   repositories:
