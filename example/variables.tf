@@ -5,7 +5,7 @@ variable "core_resource_group_name" {
   default     = ""
 }
 
-variable "acr_name" {
+variable "ACR_NAME" {
   description = "ACR name"
   type        = string
   default     = "test"
