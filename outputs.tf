@@ -1,7 +1,6 @@
-output "resource_group_name" {
-  value = "resource_group_name"
+output "ACR_PDZID" {
+  value = azurerm_private_dns_zone.acr-private-dns.*.id
 }
-
-output "resource_group_location" {
-  value = "resource_group_location"
+output "ACR_NAME" {
+  value = azurerm_container_registry.registry.name
 }
