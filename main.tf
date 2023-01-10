@@ -6,6 +6,10 @@ data "azurerm_virtual_network" "vnet_details" {
 resource "azurerm_resource_group" "acr-resource-grp" {
   name     = var.resource_group_name
   location = var.location
+  tags = {
+    application  = "Management"
+    businessArea = "Crime"
+  }
 }
 
 resource "azurerm_private_dns_zone" "acr-private-dns" {
