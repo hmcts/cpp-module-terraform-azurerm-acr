@@ -39,9 +39,9 @@ resource "azurerm_private_dns_zone_virtual_network_link" "acr-private-dns-link" 
     ignore_changes = [tags["created_by"], tags["created_time"]]
   }
 
-  depends_on = [
-    azurerm_private_dns_zone.acr-private-dns
-  ]
+#  depends_on = [
+#    azurerm_private_dns_zone.acr-private-dns
+#  ]
 }
 
 resource "azurerm_container_registry" "registry" {
