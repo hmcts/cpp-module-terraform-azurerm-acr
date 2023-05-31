@@ -75,6 +75,12 @@ variable "private_endpoint_name" {
   type        = string
 }
 
+variable "dns_vnet_links" {
+  description = "vnet links to be created for the private zone"
+  type        = map(map(any))
+  default     = {}
+}
+
 variable "subnet_id" {
   description = "The subnet id"
   type        = string
@@ -87,12 +93,6 @@ variable "virtual_network_name" {
   default     = ""
 }
 
-variable "dns_virtual_network_name" {
-  description = "The virtual network name where the DNS servers are"
-  type        = string
-  default     = ""
-}
-
 variable "private_end_point_name" {
   description = "The private endpoint name"
   type        = string
@@ -101,11 +101,6 @@ variable "private_end_point_name" {
 
 variable "core_resource_group_name" {
   description = "Name of the resource group"
-  type        = string
-}
-
-variable "dns_resource_group_name" {
-  description = "Name of the resource group for dns vnet"
   type        = string
 }
 
