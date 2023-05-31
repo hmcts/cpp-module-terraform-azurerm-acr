@@ -30,7 +30,7 @@ resource "azurerm_private_dns_zone" "acr-private-dns" {
 resource "azurerm_private_dns_zone_virtual_network_link" "acr-private-dns-link" {
   for_each = data.azurerm_virtual_network.dns_vnet_details
   name                  = each.key
-  resource_group_name   = lookup(lookup(var.dns_vnet_links,each.key),"resource_group_name")
+  resource_group_name   = var.resource_group_name
   private_dns_zone_name = var.private_dns_zone_name
   virtual_network_id    = each.value.id
 
