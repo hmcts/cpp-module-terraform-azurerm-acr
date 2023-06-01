@@ -1,6 +1,7 @@
-data "azurerm_virtual_network" "vnet_details" {
-  name                = var.virtual_network_name
-  resource_group_name = var.core_resource_group_name
+data "azurerm_virtual_network" "dns_vnet_details" {
+  for_each = var.dns_vnet_links
+  name                = each.key
+  resource_group_name = each.value["resource_group_name"]
 }
 
 resource "azurerm_resource_group" "acr-resource-grp" {
@@ -27,19 +28,20 @@ resource "azurerm_private_dns_zone" "acr-private-dns" {
 }
 
 resource "azurerm_private_dns_zone_virtual_network_link" "acr-private-dns-link" {
-  name                  = "private-dns-link"
+  for_each = data.azurerm_virtual_network.dns_vnet_details
+  name                  = each.key
   resource_group_name   = var.resource_group_name
   private_dns_zone_name = var.private_dns_zone_name
-  virtual_network_id    = data.azurerm_virtual_network.vnet_details.id
+  virtual_network_id    = each.value.id
 
   tags = var.tags
   lifecycle {
     ignore_changes = [tags["created_by"], tags["created_time"]]
   }
 
-  depends_on = [
-    azurerm_private_dns_zone.acr-private-dns
-  ]
+#  depends_on = [
+#    azurerm_private_dns_zone.acr-private-dns
+#  ]
 }
 
 resource "azurerm_container_registry" "registry" {
