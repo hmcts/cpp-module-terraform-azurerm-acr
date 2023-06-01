@@ -87,21 +87,10 @@ variable "subnet_id" {
   default     = ""
 }
 
-variable "virtual_network_name" {
-  description = "The virtual network name"
-  type        = string
-  default     = ""
-}
-
 variable "private_end_point_name" {
   description = "The private endpoint name"
   type        = string
   default     = ""
-}
-
-variable "core_resource_group_name" {
-  description = "Name of the resource group"
-  type        = string
 }
 
 variable "acr_name" {
