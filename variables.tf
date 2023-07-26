@@ -109,3 +109,8 @@ variable "virtual_network_id" {
   type        = string
   default     = ""
 }
+
+variable "ip_allow_list" {
+  type    = list(string)
+  default = []
+}
