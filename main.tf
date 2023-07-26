@@ -55,7 +55,15 @@ resource "azurerm_container_registry" "registry" {
 
   public_network_access_enabled = var.public_network_access_enabled
 
-  # georeplication_locations = var.georeplication_locations
+  network_rule_set {
+    default_action = "Deny"
+    ip_rule = var.public_network_access_enabled == true && length(var.ip_allow_list) > 0 ? [
+      for ip in var.ip_allow_list : {
+        action   = "Allow"
+        ip_range = ip
+      }
+    ] : []
+  }
 
   tags = var.tags
   lifecycle {
