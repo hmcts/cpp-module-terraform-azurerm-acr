@@ -8,13 +8,13 @@ resources:
     - repository: cppAzureDevOpsTemplates
       type: github
       name: hmcts/cpp-azure-devops-templates
+      ref: 'EI-1799'
       endpoint: 'hmcts'
 
 extends:
   template: pipelines/terratest.yaml@cppAzureDevOpsTemplates
   parameters:
     agentPool: "MDV-ADO-AGENTS-01"
-    spnCredentialsVarGroup: "terratest-app-registration"
-    azureServiceConnection: "ado_nonlive_service_principal_lab"
+    azureServiceConnection: "ado_nonlive_workload_identity"
     terratestTimeout: "30"
     tfversion: 1.2.3
