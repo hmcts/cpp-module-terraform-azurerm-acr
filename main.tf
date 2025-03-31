@@ -66,7 +66,7 @@ resource "azurerm_container_registry" "registry" {
   }
 
   data_endpoint_enabled = var.data_endpoint_enabled
-  
+
   tags = var.tags
   lifecycle {
     ignore_changes = [tags["created_by"], tags["created_time"]]
