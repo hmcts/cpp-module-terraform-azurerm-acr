@@ -13,14 +13,14 @@ module "tag_set" {
 }
 
 module "registry" {
-  source                = "../"
-  acr_name              = var.acr_name
-  sku                   = var.sku
-  location              = var.location
-  location_short        = var.location_short
-  private_dns_zone_name = var.private_dns_zone_name
-  private_endpoint_name = var.private_endpoint_name
-  resource_group_name = var.resource_group_name
+  source                        = "../"
+  acr_name                      = var.acr_name
+  sku                           = var.sku
+  location                      = var.location
+  location_short                = var.location_short
+  private_dns_zone_name         = var.private_dns_zone_name
+  private_endpoint_name         = var.private_endpoint_name
+  resource_group_name           = var.resource_group_name
   admin_enabled                 = false
   public_network_access_enabled = var.public_network_access_enabled
   data_endpoint_enabled         = var.data_endpoint_enabled
