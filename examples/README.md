@@ -17,4 +17,3 @@ Utilises Examples and tests folder
 
     cd test
     go test -v -timeout 30m
-

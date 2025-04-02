@@ -26,5 +26,3 @@ data_endpoint_enabled         = false
 admin_enabled                 = false
 # module code always creates network rules, they only work with premium SKU
 sku = "Premium"
-
-

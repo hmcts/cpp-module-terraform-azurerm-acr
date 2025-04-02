@@ -24,8 +24,8 @@ module "registry" {
   admin_enabled                 = false
   public_network_access_enabled = var.public_network_access_enabled
   #data_endpoint_enabled         = var.data_endpoint_enabled
-  subnet_id                     = azurerm_subnet.test.id
-  tags                          = module.tag_set.tags
+  subnet_id = azurerm_subnet.test.id
+  tags      = module.tag_set.tags
 }
 
 
@@ -46,8 +46,3 @@ resource "azurerm_subnet" "test" {
   private_link_service_network_policies_enabled = false
   private_endpoint_network_policies             = "Enabled"
 }
-
-
-
-
-
