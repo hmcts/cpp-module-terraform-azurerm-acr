@@ -114,9 +114,3 @@ variable "ip_allow_list" {
   type    = list(string)
   default = []
 }
-
-variable "data_endpoint_enabled" {
-  description = "Whether to enable dedicated data endpoints for this Container Registry? This is only supported on resources with the Premium SKU."
-  type        = bool
-  default     = null
-}
