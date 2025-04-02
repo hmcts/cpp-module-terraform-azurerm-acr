@@ -23,7 +23,7 @@ module "registry" {
   resource_group_name           = var.resource_group_name
   admin_enabled                 = false
   public_network_access_enabled = var.public_network_access_enabled
-  data_endpoint_enabled         = var.data_endpoint_enabled
+  #data_endpoint_enabled         = var.data_endpoint_enabled
   subnet_id                     = azurerm_subnet.test.id
   tags                          = module.tag_set.tags
 }
