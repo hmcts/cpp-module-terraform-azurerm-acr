@@ -1,6 +1,6 @@
 module github.com/hmcts/cpp-module-terraform-azurerm-acr
 
-go 1.23
+go 1.21
 
 require (
 	github.com/gruntwork-io/terratest v0.48.2
