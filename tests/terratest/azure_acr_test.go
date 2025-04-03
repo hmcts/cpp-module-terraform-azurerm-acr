@@ -43,7 +43,7 @@ func TestTerraformAcr(t *testing.T) {
 	// Assert statements
 	assert.True(t, azure.ContainerRegistryExists(t, registryName, resourceGroupName, subscriptionID))
 	assert.Equal(t, registryName, "ACRTERRAREPO01")
-	
+
 	// When the test is completed, teardown the infrastructure by calling terraform destroy
 	test_structure.RunTestStage(t, "teardown", func() {
 		terraformOptions := test_structure.LoadTerraformOptions(t, fixtureFolder)
