@@ -8,7 +8,7 @@ locals {
 }
 
 module "registry" {
-  source                        = "../"
+  source                        = "./../"
   acr_name                      = var.acr_name
   sku                           = var.sku
   location                      = var.location
