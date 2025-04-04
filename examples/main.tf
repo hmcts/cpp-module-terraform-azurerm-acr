@@ -9,7 +9,7 @@ locals {
 
 module "registry" {
   source                        = "./../"
-  acr_name                      = "${var.acr_name}-${var.postfix}"
+  acr_name                      = "${var.acr_name}${var.postfix}"
   sku                           = var.sku
   location                      = var.location
   location_short                = var.location_short
