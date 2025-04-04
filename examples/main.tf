@@ -9,7 +9,7 @@ locals {
 
 module "registry" {
   source                        = "./../"
-  acr_name                      = var.acr_name
+  acr_name                      = "${var.acr_name}-${var.postfix}"
   sku                           = var.sku
   location                      = var.location
   location_short                = var.location_short
@@ -25,7 +25,7 @@ module "registry" {
 
 
 resource "azurerm_virtual_network" "test" {
-  name                = var.vnet_name
+  name                = "${var.vnet_name}-${var.postfix}"
   location            = var.location
   resource_group_name = var.resource_group_name
   address_space       = ["10.0.0.0/16"]

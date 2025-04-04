@@ -12,7 +12,6 @@ application = "test"
 
 location       = "UK South"
 location_short = "uksouth"
-platform       = "nlv"
 
 
 # #private DNS
@@ -23,6 +22,5 @@ private_endpoint_name = "pe-lab-cpp-acrterratest"
 public_network_access_enabled = false
 acr_name                      = "ACRTERRAREPO01"
 data_endpoint_enabled         = false
-admin_enabled                 = false
 # module code always creates network rules, they only work with premium SKU
 sku = "Premium"

@@ -132,3 +132,9 @@ variable "sku" {
   type        = string
   default     = "Standard"
 }
+
+variable "postfix" {
+  description = "A postfix string to centrally mitigate resource name collisions."
+  type        = string
+  default     = "42069"
+}
