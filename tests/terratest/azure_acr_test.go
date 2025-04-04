@@ -22,7 +22,8 @@ func TestTerraformAcr(t *testing.T) {
 		VarFiles: []string{"for_terratest.tfvars"},
 	}
 
-	//destroy at when tests finish
+	//preemptive cleanup and destroy at when tests finish
+	terraform.Destroy(t, terraformOptions)
 	defer terraform.Destroy(t, terraformOptions)
 
 	// Triggers the terraform init and terraform apply command
