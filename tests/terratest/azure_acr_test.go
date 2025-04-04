@@ -23,15 +23,16 @@ func TestTerraformAcr(t *testing.T) {
 	}
 
 	//preemptive cleanup and destroy at when tests finish
+	terraform.Init(t, terraformOptions)
 	terraform.Destroy(t, terraformOptions)
 	defer terraform.Destroy(t, terraformOptions)
 
 	// Triggers the terraform init and terraform apply command
 	// This will init and apply the resources and fail the test if there are any errors
 	// return stdout/stderr from the apply command.
-	_, err := terraform.InitAndApplyE(t, terraformOptions)
+	_, err := terraform.ApplyE(t, terraformOptions)
 	if err != nil {
-		t.Fatal("Terraform InitAndApply failed:", err)
+		t.Fatal("Terraform ApplyE failed:", err)
 	}
 
 	// Run `terraform output` to get the values of output variables
