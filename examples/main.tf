@@ -40,5 +40,4 @@ resource "azurerm_subnet" "test" {
   address_prefixes                              = ["10.0.1.0/24"]
   private_link_service_network_policies_enabled = false
   private_endpoint_network_policies             = "Enabled"
-  tags                                          = local.tags
 }
