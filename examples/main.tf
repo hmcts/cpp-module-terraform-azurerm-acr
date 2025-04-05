@@ -21,9 +21,6 @@ module "registry" {
   #data_endpoint_enabled         = var.data_endpoint_enabled
   subnet_id = azurerm_subnet.test.id
   tags      = local.tags
-  depends_on = [
-    azurerm_subnet.test
-  ]
 }
 
 
