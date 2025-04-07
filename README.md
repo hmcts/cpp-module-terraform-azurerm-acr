@@ -31,6 +31,7 @@ No modules.
 | <a name="input_admin_enabled"></a> [admin\_enabled](#input\_admin\_enabled) | Specifies whether the admin user is enabled. | `bool` | `false` | no |
 | <a name="input_core_resource_group_name"></a> [core\_resource\_group\_name](#input\_core\_resource\_group\_name) | Name of the resource group | `string` | n/a | yes |
 | <a name="input_custom_name"></a> [custom\_name](#input\_custom\_name) | Custom Azure Container Registry name, generated if not set | `string` | `""` | no |
+| <a name="data_endpoint_enabled"></a> [data_endpoint\_enabled](#input\_data_endpoint\_enabled) | Whether to enable dedicated data endpoints for this Container Registry? This is only supported on resources with the Premium SKU. | `bool` | `null` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Project environment | `string` | n/a | yes |
 | <a name="input_extra_tags"></a> [extra\_tags](#input\_extra\_tags) | Additional tags to associate with your Azure Container Registry. | `map(string)` | `{}` | no |
 | <a name="input_georeplication_locations"></a> [georeplication\_locations](#input\_georeplication\_locations) | A list of Azure locations where the container registry should be geo-replicated. | `list(string)` | `null` | no |
