@@ -1,0 +1,24 @@
+crash.log
+.swp
+.DS_Store
+*.lock.hcl
+.idea/
+*.iml
+
+# Terraform log file
+terraform.log
+
+# Terraform directory
+.terraform/
+terraform.tfstate.d/
+logs/
+
+# Variable files
+terraform.tfvars
+
+### https://raw.github.com/github/gitignore/abad92dac5a4306f72242dae3bca6e277bce3615/Terraform.gitignore
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+*.terraform.lock.hcl
