@@ -13,7 +13,7 @@ resources:
 extends:
   template: pipelines/terratest.yaml@cppAzureDevOpsTemplates
   parameters:
-    agentPool: "MDV-ADO-AGENTS-01"
+    agentPool: "ubuntu-ado-agents-mdv"
     spnCredentialsVarGroup: "terratest-app-registration"
     azureServiceConnection: "ado_nonlive_service_principal_lab"
     terratestTimeout: "30"
